@@ -1,38 +1,93 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.BG__conteiner {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: url("/public/images/strawberryBG.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+.Navstyle {
+  color: aliceblue;
+  justify-content: center;
+  background-color: #db3d4e;
+  border-radius: 10px 10px 0px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App__conteiner {
+  position: absolute;
+  justify-content: center;
+  /* background-color: bisque; */
+}
+
+/* .Home__conteiner{
+  position: absolute;
+  background-color: #db3d4e;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 10px 10px; 
+} */
+
+@media screen and (max-width: 576px) {
+  .App__conteiner {
+    height: 100vh;
+    width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .Navstyle {
+    border-radius: 00px 00px 0px 0px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .App__conteiner {
+    height: 100vh;
+    width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .App__conteiner {
+    height: 900px;
+    width: 600px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .App__conteiner {
+    height: 900px;
+    width: 600px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App__conteiner {
+    height: 900px;
+    width: 600px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .App__conteiner {
+    height: 900px;
+    width: 600px;
+    border-radius: 10px;
   }
 }
