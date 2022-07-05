@@ -28,6 +28,7 @@
 .App__conteiner {
   position: absolute;
   justify-content: center;
+    overflow: hidden;
   /* background-color: bisque; */
 }
 
@@ -62,7 +63,7 @@
 
 @media screen and (min-width: 768px) {
   .App__conteiner {
-    height: 900px;
+    height: 956px;
     width: 600px;
     border-radius: 10px;
   }
@@ -70,7 +71,7 @@
 
 @media screen and (min-width: 992px) {
   .App__conteiner {
-    height: 900px;
+    height: 956px;
     width: 600px;
     border-radius: 10px;
   }
@@ -78,7 +79,7 @@
 
 @media screen and (min-width: 1200px) {
   .App__conteiner {
-    height: 900px;
+    height: 956px;
     width: 600px;
     border-radius: 10px;
   }
@@ -86,7 +87,7 @@
 
 @media screen and (min-width: 1400px) {
   .App__conteiner {
-    height: 900px;
+    height: 956px;
     width: 600px;
     border-radius: 10px;
   }
