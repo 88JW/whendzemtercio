@@ -18,6 +18,10 @@
     height: 100%;
   }
 
+  button{
+    background-color: #db3d4e;
+  }
+
 
   
   @media screen and (max-width: 375px) {
