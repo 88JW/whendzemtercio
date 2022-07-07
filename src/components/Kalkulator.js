@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/Kalkulator.css";
 import "../App.css";
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default class Kalkulator extends Component {
     state = {
@@ -76,67 +77,76 @@ export default class Kalkulator extends Component {
     render() {
         return (
             <div className="Elements__conteiner">
+
+
                 <div className="Kalkulator__conteiner">
                     <h1>Kaklulator dzęmiku</h1>
+                    <Container fluid>
+                        <form onSubmit={this.handleSubmmit}>
+                            <Row>
+                                <Col>
+                                    {/* <div className="blok1"> */}
+                                    <label htmlFor="truskawki">
+                                        Cena za 1 kg Truskawek:
+                                        <br />  <input
+                                            className="textbox"
+                                            type="number"
+                                            id="truskawki"
+                                            name="truskawkicena"
+                                            value={this.state.truskawkicena}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                </Col>
+                                <Col >
+                                    <label htmlFor="cukier">
+                                        Cena za 1 kg cukru:
 
-                    <form onSubmit={this.handleSubmmit}>
-                        <div className="blok1">
-                            <label htmlFor="truskawki">
-                                Cena za 1 kg Truskawek:
-                                <input
-                                    className="textbox"
-                                    type="number"
-                                    id="truskawki"
-                                    name="truskawkicena"
-                                    value={this.state.truskawkicena}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
+                                        <br />  <input
+                                            className="textbox"
+                                            type="number"
+                                            id="cukier"
+                                            name="cukiercena"
+                                            value={this.state.cukiercena}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                    {/* </div> */}
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col sm>
+                                    {/* <div className="blok2"> */}
+                                    <label htmlFor="owoce">
+                                        Ile kg owoców:
 
-                            <label htmlFor="cukier">
-                                Cena za 1 kg cukru:
+                                        <br />  <input
+                                            className="textbox"
+                                            type="number"
+                                            id="owoce"
+                                            name="owocecena"
+                                            value={this.state.owocecena}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                </Col>
+                                <Col sm>
+                                    <label htmlFor="energia">
+                                        Cena za 1kWg:
 
-                                <input
-                                    className="textbox"
-                                    type="number"
-                                    id="cukier"
-                                    name="cukiercena"
-                                    value={this.state.cukiercena}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
-                        </div>
-                        <div className="blok2">
-                            <label htmlFor="owoce">
-                                Ile kg owoców:
-
-                                <input
-                                    className="textbox"
-                                    type="number"
-                                    id="owoce"
-                                    name="owocecena"
-                                    value={this.state.owocecena}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
-
-
-                            <label htmlFor="energia">
-                                Cena za 1kWg:
-
-                                <input
-                                    className="textbox"
-                                    type="number"
-                                    id="energia"
-                                    name="energiacena"
-                                    value={this.state.energiacena}
-                                    onChange={this.handleChange}
-                                    step={0.01}
-                                    precision={2}
-                                />
-                            </label>
-                        </div>
-                        {/* <label htmlFor="czas">
+                                        <br />    <input
+                                            className="textbox"
+                                            type="number"
+                                            id="energia"
+                                            name="energiacena"
+                                            value={this.state.energiacena}
+                                            onChange={this.handleChange}
+                                            step={0.01}
+                                            precision={2}
+                                        />
+                                    </label>
+                                    {/* </div> */}
+                                    {/* <label htmlFor="czas">
                             Cza przygotowania:
                             <input
                                 type="number"
@@ -149,7 +159,7 @@ export default class Kalkulator extends Component {
                                 readOnly
                             />
                         </label> */}
-                        {/* <label htmlFor="moc">
+                                    {/* <label htmlFor="moc">
                             Moc grzewcza:
                             <input
                                 type="number"
@@ -162,21 +172,28 @@ export default class Kalkulator extends Component {
                                 readOnly
                             />
                         </label> */}
-                        <br />
-                        <label htmlFor="sloiki">
-                            {" "}
-                            Czy masz własne słoiki?
-                            <input
-                                id="sloiki"
-                                type="checkbox"
-                                name="sloiki"
-                                checked={this.state.sloiki}
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <br />
-                        <button className="myButton">Oblicz opłacalność</button>
-                    </form>
+                                    <br /></Col>
+                            </Row>
+                            <Row>
+                                <Col>  <input
+                                    id="sloiki"
+                                    type="checkbox"
+                                    name="sloiki"
+                                    checked={this.state.sloiki}
+                                    onChange={this.handleChange}
+                                />
+                                    <label htmlFor="sloiki">
+                                        {/* {" "} */}
+                                        Czy masz własne słoiki?
+
+
+                                    </label>
+
+                                </Col>
+                            </Row>
+                            <button className="myButton">Oblicz opłacalność</button>
+                        </form>
+                    </Container>
                 </div >
             </div >
         );

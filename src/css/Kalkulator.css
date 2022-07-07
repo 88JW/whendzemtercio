@@ -1,6 +1,5 @@
 .Kalkulator__conteiner {
   position: absolute;
-  /* background-color: #db3d4e; */
   width: 100%;
   height: 100%;
   border-radius: 0px 0px 10px 10px;
@@ -98,11 +97,27 @@ align-content: center; */
 
 }
 
+.col{
+padding: 10px !important;
+margin: 10px !important;
+}
 
 
-@media screen and (max-width: 375px) {}
 
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 375px) {
+
+  .col{
+    padding: 0px !important;
+    margin: 0px !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+  .col{
+    padding: 0px !important;
+    margin: 0px !important;
+    }
+}
 
 @media screen and (min-width: 576px) {}
 

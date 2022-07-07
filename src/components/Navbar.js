@@ -12,7 +12,7 @@ export default class navbar extends Component {
         return (
 
             <div>
-                <Router>
+                <Router className="menu" >
                     <div className='Navstyle'>
                         <Navbar expand="md" variant="dark">
                             <Container>
