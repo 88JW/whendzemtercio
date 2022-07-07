@@ -7,8 +7,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   background-color: #db3d4e;
+  font-family: "Sriracha", cursive;
+  color: aliceblue;
+  font-size: 18px;
+}
+
+
+.blok1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background-color: #666;
+}
+
+.blok2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background-color: #666;
+}
+
+h1 {
+  margin: 20px;
+
+
+}
+
+label {
+  margin: 10px;
+  /* display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+align-content: center; */
+
+
 }
 
 .Kalkulator {
@@ -17,26 +60,56 @@
   height: 100%;
 }
 
-button {
-  background-color: #db3d4e;
+.myButton {
+  background-color: rgba(233, 222, 206, 0.8);
+  border-radius: 28px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: "Sriracha", cursive;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 375px) {
-}
-@media screen and (max-width: 576px) {
-}
-
-@media screen and (min-width: 576px) {
+.myButton:hover {
+  background-color: aliceblue;
 }
 
-@media screen and (min-width: 768px) {
+.myButton:active {
+  position: relative;
+  top: 1px;
 }
 
-@media screen and (min-width: 992px) {
+.textbox {
+
+  background: white;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #DDD inset;
+  color: #666;
+  outline: none;
+  height: 25px;
+  padding: 20px;
+  max-width: 100px;
+  text-align: center;
+  margin: 5px;
+
 }
 
-@media screen and (min-width: 1200px) {
-}
 
-@media screen and (min-width: 1400px) {
-}
+
+@media screen and (max-width: 375px) {}
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (min-width: 576px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1400px) {}
