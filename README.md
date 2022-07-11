@@ -1,4 +1,7 @@
-# Aplikation PWA WhenDzem in progres...
+# Aplikation PWA WhenDzem can check on netlify:
+
+https://clinquant-squirrel-28e5c7.netlify.app
+
 
 # Getting Started with Create React App
 
