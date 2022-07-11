@@ -1,7 +1,6 @@
 # Aplikation PWA WhenDzem can check on netlify:
 
-https://clinquant-squirrel-28e5c7.netlify.app
-
+https://celebrated-syrniki-28d7a7.netlify.app
 
 # Getting Started with Create React App
 
