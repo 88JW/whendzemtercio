@@ -83,11 +83,11 @@ export default class Kalkulator extends Component {
                     </Container>
                     <Container fluid>
                         <form onSubmit={this.handleSubmmit}>
-                            <Row>
+                            <Row className="row__one">
                                 <Col>
                                     <label htmlFor="truskawki">
                                         Cena za 1 kg Truskawek:
-                                        <br />{" "}
+                                        <br />
                                         <input
                                             className="textbox"
                                             type="number"
@@ -101,7 +101,7 @@ export default class Kalkulator extends Component {
                                 <Col>
                                     <label htmlFor="cukier">
                                         Cena za 1 kg cukru:
-                                        <br />{" "}
+                                        <br />
                                         <input
                                             className="textbox"
                                             type="number"
@@ -114,7 +114,7 @@ export default class Kalkulator extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col sm>
+                                <Col>
                                     <label htmlFor="owoce">
                                         Ile kg owoców:
                                         <br />{" "}
@@ -128,7 +128,7 @@ export default class Kalkulator extends Component {
                                         />
                                     </label>
                                 </Col>
-                                <Col sm>
+                                <Col >
                                     <label htmlFor="energia">
                                         Cena za 1 kWg:
                                         <br />{" "}
@@ -147,20 +147,21 @@ export default class Kalkulator extends Component {
                                     <br />
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col>
-                                    {" "}
-                                    <input
-                                        className="checkmark"
-                                        id="sloiki"
-                                        type="checkbox"
-                                        name="sloiki"
-                                        checked={this.state.sloiki}
-                                        onChange={this.handleChange}
-                                    />
-                                    <label htmlFor="sloiki">Czy masz własne słoiki?</label>
-                                </Col>
-                            </Row>
+
+
+                            {" "}
+                            <input
+                                className="checkmark"
+                                id="sloiki"
+                                type="checkbox"
+                                name="sloiki"
+                                checked={this.state.sloiki}
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="sloiki">Czy masz własne słoiki?</label>
+                            <br />
+
+
                             <button className="myButton" onClick={this.handleClick}>
                                 Oblicz opłacalność
                             </button>
