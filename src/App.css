@@ -28,8 +28,9 @@
 .App__conteiner {
   position: absolute;
   justify-content: center;
-    overflow: hidden;
+ overflow: hidden;
   /* background-color: bisque; */
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.186);
 }
 
 /* .Home__conteiner{

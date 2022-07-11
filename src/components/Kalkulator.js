@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/Kalkulator.css";
 import "../App.css";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from "react-bootstrap";
 
 export default class Kalkulator extends Component {
     state = {
@@ -12,13 +12,11 @@ export default class Kalkulator extends Component {
         czascena: 0.5,
         moccena: 1,
         sloiki: false,
+        jeden: "",
+        dwa: "",
     };
 
     handleChange = (e) => {
-        // console.log(e.target.type);
-        // console.log(e.target.name);
-        // console.log(e.target.value);
-        // console.log(this.state.cukiercena.type);
         const name = e.target.name;
         const type = e.target.type;
         const checked = e.target.checked;
@@ -30,7 +28,6 @@ export default class Kalkulator extends Component {
             });
         } else if (type === "checkbox") {
             const checked = e.target.checked;
-            console.log(checked);
             this.setState({
                 [name]: checked,
             });
@@ -39,10 +36,6 @@ export default class Kalkulator extends Component {
 
     handleSubmmit = (e) => {
         e.preventDefault();
-        console.log("obliczanie");
-        console.log(this.state.truskawkicena);
-        console.log(this.state.cukiercena);
-        console.log(this.state.cukiercena);
 
         const wynik =
             Number(this.state.truskawkicena * this.state.owocecena) +
@@ -50,45 +43,52 @@ export default class Kalkulator extends Component {
             1 * this.state.energiacena * this.state.czascena;
 
         if (this.state.sloiki === true) {
-            // console.log('możesz nie kupować słoików');
-            console.log(
-                wynik / (4 * this.state.owocecena) + "za słoiczek 200ml dżemu"
+            const jedenwynik = Number(
+                (this.state.jeden = wynik / (4 * this.state.owocecena))
             );
+
+            const napisjeden = " Cena za słoiczek własnego dżemu.";
+
+            this.setState({
+                dwa: this.state.jeden.toPrecision(3) + napisjeden,
+            });
         } else {
-            console.log("należy doliczyć jeszcze cenę słokików");
-            console.log(wynik + 1.8 * (4 * this.state.owocecena));
-            // console.log((wynik) / (1.8 * (4 * this.state.owocecena)) + "za słoiczek 200ml dżemu")
-            console.log("cena za słoik");
-            console.log(
-                (wynik + 1.8 * (4 * this.state.owocecena)) / (4 * this.state.owocecena)
+            const dwawynik = Number(
+                (this.state.dwa =
+                    (wynik + 1.8 * (4 * this.state.owocecena)) /
+                    (4 * this.state.owocecena))
             );
+
+            const napisdwa = " Cena za słoiczek własnego dżemu.";
+
+            this.setState({
+                dwa: this.state.dwa.toPrecision(3) + napisdwa,
+            });
         }
-
-        // console.log(wynik);
-
-        // if (true) {
-
-        //     const wynik = this.setState.truskawkicena;
-
-        //     console.log(wynik)
-        // }
     };
 
     render() {
         return (
             <div className="Elements__conteiner">
-
-
                 <div className="Kalkulator__conteiner">
-                    <h1>Kaklulator dzęmiku</h1>
+                    <Container>
+                        <h1>Kalkulator dżemiku</h1>
+                        <div className="opis">
+                            <p>
+                                Wprowadź dane odnośnie cen poszczególnych produktów.
+                                <br />
+                                Obliczymy opłacalność własnego dżemu.
+                            </p>
+                        </div>
+                    </Container>
                     <Container fluid>
                         <form onSubmit={this.handleSubmmit}>
                             <Row>
                                 <Col>
-                                    {/* <div className="blok1"> */}
                                     <label htmlFor="truskawki">
                                         Cena za 1 kg Truskawek:
-                                        <br />  <input
+                                        <br />{" "}
+                                        <input
                                             className="textbox"
                                             type="number"
                                             id="truskawki"
@@ -98,11 +98,11 @@ export default class Kalkulator extends Component {
                                         />
                                     </label>
                                 </Col>
-                                <Col >
+                                <Col>
                                     <label htmlFor="cukier">
                                         Cena za 1 kg cukru:
-
-                                        <br />  <input
+                                        <br />{" "}
+                                        <input
                                             className="textbox"
                                             type="number"
                                             id="cukier"
@@ -111,16 +111,14 @@ export default class Kalkulator extends Component {
                                             onChange={this.handleChange}
                                         />
                                     </label>
-                                    {/* </div> */}
                                 </Col>
                             </Row>
                             <Row>
                                 <Col sm>
-                                    {/* <div className="blok2"> */}
                                     <label htmlFor="owoce">
                                         Ile kg owoców:
-
-                                        <br />  <input
+                                        <br />{" "}
+                                        <input
                                             className="textbox"
                                             type="number"
                                             id="owoce"
@@ -132,9 +130,9 @@ export default class Kalkulator extends Component {
                                 </Col>
                                 <Col sm>
                                     <label htmlFor="energia">
-                                        Cena za 1kWg:
-
-                                        <br />    <input
+                                        Cena za 1 kWg:
+                                        <br />{" "}
+                                        <input
                                             className="textbox"
                                             type="number"
                                             id="energia"
@@ -145,57 +143,36 @@ export default class Kalkulator extends Component {
                                             precision={2}
                                         />
                                     </label>
-                                    {/* </div> */}
-                                    {/* <label htmlFor="czas">
-                            Cza przygotowania:
-                            <input
-                                type="number"
-                                id="czas"
-                                name="czascena"
-                                value={this.state.czascena}
-                                onChange={this.handleChange}
-                                step={0.01}
-                                precision={2}
-                                readOnly
-                            />
-                        </label> */}
-                                    {/* <label htmlFor="moc">
-                            Moc grzewcza:
-                            <input
-                                type="number"
-                                id="moc"
-                                name="moccena"
-                                value={this.state.moccena}
-                                onChange={this.handleChange}
-                                step={0.01}
-                                precision={2}
-                                readOnly
-                            />
-                        </label> */}
-                                    <br /></Col>
-                            </Row>
-                            <Row>
-                                <Col>  <input
-                                    id="sloiki"
-                                    type="checkbox"
-                                    name="sloiki"
-                                    checked={this.state.sloiki}
-                                    onChange={this.handleChange}
-                                />
-                                    <label htmlFor="sloiki">
-                                        {/* {" "} */}
-                                        Czy masz własne słoiki?
 
-
-                                    </label>
-
+                                    <br />
                                 </Col>
                             </Row>
-                            <button className="myButton">Oblicz opłacalność</button>
+                            <Row>
+                                <Col>
+                                    {" "}
+                                    <input
+                                        className="checkmark"
+                                        id="sloiki"
+                                        type="checkbox"
+                                        name="sloiki"
+                                        checked={this.state.sloiki}
+                                        onChange={this.handleChange}
+                                    />
+                                    <label htmlFor="sloiki">Czy masz własne słoiki?</label>
+                                </Col>
+                            </Row>
+                            <button className="myButton" onClick={this.handleClick}>
+                                Oblicz opłacalność
+                            </button>
                         </form>
                     </Container>
-                </div >
-            </div >
+                    <Container>
+                        <div className="miejsce">
+                            <h4>{this.state.dwa}</h4>
+                        </div>
+                    </Container>
+                </div>
+            </div>
         );
     }
 }
