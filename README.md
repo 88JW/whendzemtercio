@@ -1,4 +1,5 @@
-# Aplikation PWA WhenDzem can check on netlify:
+# Własna aplikacja PWA.
+## Kalkulator opłacalności dżemiku udostępniony na netlify: 
 
 https://celebrated-syrniki-28d7a7.netlify.app
 
